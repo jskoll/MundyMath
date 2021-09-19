@@ -1,0 +1,33 @@
+{
+    "name": "mundymath",
+    "version": "0.0.1",
+    "description": "Simple Math Library",
+    "scripts": {
+        "build": "tsc",
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jskoll/MundyMath.git"
+    },
+    "keywords": [
+        "WVU SENG 560",
+        "Mundy",
+        "Math"
+    ],
+    "author": "Jason Skollingsberg",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/jskoll/MundyMath/issues"
+    },
+    "homepage": "https://github.com/jskoll/MundyMath#readme",
+    "dependencies": {
+        "typescript": "^4.4.3"
+    },
+    "devDependencies": {
+        "@types/jest": "^27.0.1",
+        "jest": "^27.2.0",
+        "react-dev-utils": "^11.0.4",
+        "ts-jest": "^27.0.5"
+    }
+}
