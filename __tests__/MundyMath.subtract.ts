@@ -16,27 +16,27 @@ describe("test subtract function with single numbers", () => {
     });
 });
 
-describe("test add function with Array<numbers>", () => {
-    it("should return [2, 4, 6, 8] for add([1, 2, 3, 4], [1, 2, 3, 4])", () =>{
-         expect(MundyMath.add([1, 2, 3, 4], [1, 2, 3, 4])).toStrictEqual( [2, 4, 6, 8]);
+describe("test subtract function with Array<numbers>", () => {
+    it("should return [0, 0, 0, 0] for add([1, 2, 3, 4], [1, 2, 3, 4])", () =>{
+         expect(MundyMath.subtract([1, 2, 3, 4], [1, 2, 3, 4])).toStrictEqual( [0, 0, 0, 0]);
     });
-    it("should return [2, 4, 3, 4] for add([1, 2], [1, 2, 3, 4])", () =>{
-         expect(MundyMath.add([1, 2], [1, 2, 3, 4])).toStrictEqual( [2, 4, 3, 4]);
+    it("should return [0, 0 -3, -4] for add([1, 2], [1, 2, 3, 4])", () =>{
+         expect(MundyMath.subtract ([1, 2], [1, 2, 3, 4])).toStrictEqual( [0, 0, -3, -4]);
     });
     it("should return [2, 4, 3, 4] for add([1, 2, 3, 4], [1, 2])", () =>{
-         expect(MundyMath.add([1, 2,  3, 4], [1, 2])).toStrictEqual( [2, 4, 3, 4]);
+         expect(MundyMath.subtract([1, 2,  3, 4], [1, 2])).toStrictEqual( [0, 0, 3, 4]);
     });
 });
 
-describe("Errors expected when passing none numbers to add", () => {
+describe("Errors expected when passing none numbers to subtract", () => {
     it("should throw an error for add('a', 3)", () => {
         expect(() => {
-            MundyMath.add('a', 3)
+            MundyMath.subtract('a', 3)
         }).toThrow("Unable to run calculation, each value must be either numeric or an array of numeric values")
     });
     it("should throw an error for add(['a'], [3])", () => {
         expect(() => {
-            MundyMath.add(['a'], [3])
+            MundyMath.subtract (['a'], [3])
         }).toThrow("Unable to run calculation, each value must be either numeric or an array of numeric values")
     });
 });
