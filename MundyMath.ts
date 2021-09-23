@@ -7,14 +7,7 @@ enum CalcTypes {
     SQRT = 'sqrt',
 }
 
-export function add(a: number | Array<number>, b: number | Array<number>): number | Array<number> {
-    return calculate(CalcTypes.ADD, a, b)
-}
-export function subtract(a: number | Array<number>, b: number | Array<number>): number | Array<number> {
-    return calculate(CalcTypes.SUBTRACT, a, b)
-}
-
-const MundyMath = {
+export const MundyMath = {
     add: (a: number | Array<number>, b: number | Array<number>): number | Array<number> => {
         return calculate(CalcTypes.ADD, a, b)
     },
