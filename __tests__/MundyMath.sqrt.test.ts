@@ -23,7 +23,9 @@ describe("Errors expected when passing none numbers to sqrt", () => {
             mundyMath.sqrt('a')
         }).toThrow("Unable to run calculation, each value must be either numeric or an array of numeric values")
     });
-
+    it("should be NaN sqrt(-4)", () => {
+        expect(mundyMath.sqrt(-4)).toBe(NaN);
+    })
 });
 
 
