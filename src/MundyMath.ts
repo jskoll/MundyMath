@@ -72,12 +72,8 @@ function iterateOverTwoArrays(a: Array<number>, b: Array<number>): Array<Array<n
     })
 }
 
-function doCalculation(type: string, a: number, b: number | null = null): number {
-    if (b === null && type !== CalcTypes.SQRT) {
-        throw new Error(`Calculations of type ${type} require 2 numbers, only 1 given`);
-    }
-
-    b = b as number;
+function doCalculation(type: string, a: number, b: number | null = null): number | undefined{
+    b = b ?? 0;
     switch (type) {
         case CalcTypes.ADD:
             return a + b;
@@ -91,7 +87,5 @@ function doCalculation(type: string, a: number, b: number | null = null): number
             return Math.pow(a, b)
         case CalcTypes.SQRT:
             return Math.sqrt(a);
-        default:
-            throw new Error('Unable to run calculation')
     }
 }

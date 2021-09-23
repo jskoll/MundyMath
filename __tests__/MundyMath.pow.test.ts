@@ -1,6 +1,5 @@
-const math = require('../MundyMath');
+const math = require('../src/MundyMath');
 const mundyMath = math.MundyMath
-
 
 describe("test pow function with single numbers", () => {
     it("should return 4 for pow(2, 2)", () => {
@@ -38,6 +37,11 @@ describe("Errors expected when passing none numbers to pow", () => {
     it("should throw an error for subtract(['a'], [3])", () => {
         expect(() => {
             mundyMath.pow (['a'], [3])
+        }).toThrow("Unable to run calculation, each value must be either numeric or an array of numeric values")
+    });
+    it("should throw an error for pow(4)", () => {
+        expect(() => {
+            mundyMath.pow(4)
         }).toThrow("Unable to run calculation, each value must be either numeric or an array of numeric values")
     });
 });

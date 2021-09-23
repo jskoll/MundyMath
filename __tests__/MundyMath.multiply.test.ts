@@ -1,4 +1,4 @@
-const math = require("../MundyMath");
+const math = require("../src/MundyMath");
 const mundyMath = math.MundyMath
 
 describe("test multiply function with single numbers", () => {
@@ -37,6 +37,11 @@ describe("Errors expected when passing none numbers to subtract", () => {
     it("should throw an error for multiply(['a'], [3])", () => {
         expect(() => {
             mundyMath.multiply (['a'], [3])
+        }).toThrow("Unable to run calculation, each value must be either numeric or an array of numeric values")
+    });
+    it("should throw an error for multiply(4)", () => {
+        expect(() => {
+            mundyMath.multiply(4)
         }).toThrow("Unable to run calculation, each value must be either numeric or an array of numeric values")
     });
 });

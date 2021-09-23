@@ -1,4 +1,4 @@
-const math = require('../MundyMath');
+const math = require('../src/MundyMath');
 const mundyMath = math.MundyMath
 
 
@@ -32,12 +32,17 @@ describe("test divide function with Array<numbers>", () => {
 describe("Errors expected when passing none numbers to divide", () => {
     it("should throw an error for divide('a', 3)", () => {
         expect(() => {
-            mundyMath.subtract('a', 3)
+            mundyMath.divide('a', 3)
         }).toThrow("Unable to run calculation, each value must be either numeric or an array of numeric values")
     });
     it("should throw an error for divide(['a'], [3])", () => {
         expect(() => {
-            mundyMath.subtract (['a'], [3])
+            mundyMath.divide (['a'], [3])
+        }).toThrow("Unable to run calculation, each value must be either numeric or an array of numeric values")
+    });
+    it("should throw an error for divide(4)", () => {
+        expect(() => {
+            mundyMath.divide(4)
         }).toThrow("Unable to run calculation, each value must be either numeric or an array of numeric values")
     });
 });
